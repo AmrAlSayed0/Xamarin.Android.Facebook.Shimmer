@@ -1,5 +1,4 @@
 ﻿<metadata>
-
     <attr path="/api/package[@name='com.facebook.shimmer']"
           name="managedName" >Facebook.Shimmer</attr>
     <attr path="/api/package[@name='com.facebook.shimmer']/class[@name='ShimmerFrameLayout']/method[@name='onLayout' and count(parameter)=5 and parameter[1][@type='boolean'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int']]"
