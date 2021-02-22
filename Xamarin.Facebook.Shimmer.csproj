@@ -1,0 +1,63 @@
+﻿<Project Sdk="MSBuild.Sdk.Extras/3.0.23" >
+    <PropertyGroup>
+        <OutputType>Library</OutputType>
+        <IsBindingProject>true</IsBindingProject>
+        <RootNamespace>Xamarin.Facebook.Shimmer</RootNamespace>
+        <AssemblyName>Xamarin.Facebook.Shimmer</AssemblyName>
+        <FileAlignment>512</FileAlignment>
+        <Deterministic>true</Deterministic>
+        <LangVersion>9.0</LangVersion>
+        <Nullable>enable</Nullable>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+        <AndroidUseIntermediateDesignerFile>true</AndroidUseIntermediateDesignerFile>
+        <TargetFrameworks>monoandroid11.0</TargetFrameworks>
+        <AndroidClassParser>class-parse</AndroidClassParser>
+        <AndroidCodegenTarget>XAJavaInterop1</AndroidCodegenTarget>
+        <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
+        <DebugType>portable</DebugType>
+        <DefineConstants>$(DefineConstants);TRACE;_BINDING_;</DefineConstants>
+    </PropertyGroup>
+    <PropertyGroup>
+        <PackageId>Xamarin.Android.Facebook.Shimmer</PackageId>
+        <Title>A Xamarin binding for Facebook's Android library "Shimmer"</Title>
+        <Summary>A Xamarin binding for Facebook's Android library "Shimmer"</Summary>
+        <Description>A Xamarin binding for Facebook's Android library "Shimmer"</Description>
+        <Authors>AmrAlSayed0</Authors>
+        <Owners>AmrAlSayed0</Owners>
+        <Copyright>© AmrAlSayed0. All rights reserved.</Copyright>
+        <PackageTags>facebook shimmer views xamarin android monodroid</PackageTags>
+        <PackageProjectUrl>https://go.microsoft.com/fwlink/?linkid=2130312</PackageProjectUrl>
+        <PackageVersion>0.5.0.0</PackageVersion>
+        <RepositoryType>git</RepositoryType>
+        <NeutralLanguage>en</NeutralLanguage>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' " >
+        <DebugSymbols>true</DebugSymbols>
+        <Optimize>false</Optimize>
+        <OutputPath>bin\Debug\</OutputPath>
+        <DefineConstants>$(DefineConstants);DEBUG;</DefineConstants>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' " >
+        <DebugSymbols>false</DebugSymbols>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\Release\</OutputPath>
+        <DefineConstants>$(DefineConstants);RELEASE;</DefineConstants>
+    </PropertyGroup>
+    <ItemGroup>
+        <Reference Include="Mono.Android" />
+        <Reference Include="System" />
+    </ItemGroup>
+    <ItemGroup>
+        <LibraryProjectZip Include="Jars\shimmer-0.5.0.aar" />
+    </ItemGroup>
+    <ItemGroup>
+        <None Remove="Transforms\*.xml" />
+        <TransformFile Include="Transforms\*.xml" />
+    </ItemGroup>
+    <ItemGroup>
+        <!-- androidx.annotation » annotation » 1.0.1/1.1.0 -->
+        <PackageReference Include="Xamarin.AndroidX.Annotation"
+                          Version="1.1.0.8" />
+    </ItemGroup>
+</Project>
