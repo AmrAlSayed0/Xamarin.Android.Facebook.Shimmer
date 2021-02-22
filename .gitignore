@@ -362,5 +362,5 @@ MigrationBackup/
 FodyWeavers.xsd
 
 # Jars & AARs
-Jars/*.jar
-Jars/*.aar
+/Jars/*.jar
+/Jars/*.aar
