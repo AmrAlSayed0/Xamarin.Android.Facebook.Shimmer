@@ -3,6 +3,14 @@
           name="managedName" >Facebook.Shimmer</attr>
     <attr path="/api/package[@name='com.facebook.shimmer']/class[@name='ShimmerFrameLayout']/method[@name='onLayout' and count(parameter)=5 and parameter[1][@type='boolean'] and parameter[2][@type='int'] and parameter[3][@type='int'] and parameter[4][@type='int'] and parameter[5][@type='int']]"
           name="visibility" >protected</attr>
+    <attr path="/api/package[@name='com.facebook.shimmer']/class[@name='ShimmerDrawable']/method[@name='onBoundsChange' and count(parameter)=1 and parameter[1][@type='android.graphics.Rect']]"
+          name="visibility" >protected</attr>
+    <attr path="/api/package[@name='com.facebook.shimmer']/class[@name='ShimmerFrameLayout']/method[@name='dispatchDraw' and count(parameter)=1 and parameter[1][@type='android.graphics.Canvas']]"
+          name="visibility" >protected</attr>
+    <attr path="/api/package[@name='com.facebook.shimmer']/class[@name='ShimmerFrameLayout']/method[@name='onAttachedToWindow' and count(parameter)=0]"
+          name="visibility" >protected</attr>
+    <attr path="/api/package[@name='com.facebook.shimmer']/class[@name='ShimmerFrameLayout']/method[@name='onDetachedFromWindow' and count(parameter)=0]"
+          name="visibility" >protected</attr>
     <attr path="/api/package[@name='com.facebook.shimmer']/class[@name='Shimmer.Builder']/method[@name='getThis' and count(parameter)=0]"
           name="propertyName" >This</attr>
     <attr path="/api/package[@name='com.facebook.shimmer']/class[@name='Shimmer.Builder']/method[@name='getThis' and count(parameter)=0]"
