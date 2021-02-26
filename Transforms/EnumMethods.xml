@@ -1,1 +1,27 @@
-﻿<enum-method-mappings></enum-method-mappings>
+﻿<enum-method-mappings>
+    <mapping jni-class="com/facebook/shimmer/Shimmer$Builder" >
+        <method jni-name="setDirection"
+                parameter="direction"
+                clr-enum-type="Facebook.Shimmer.ShimmerDirection" />
+    </mapping>
+    <mapping jni-class="com/facebook/shimmer/Shimmer$Builder" >
+        <method jni-name="setShape"
+                parameter="direction"
+                clr-enum-type="Facebook.Shimmer.ShimmerShape" />
+    </mapping>
+    <mapping jni-class="com/facebook/shimmer/Shimmer$Builder" >
+        <method jni-name="setShape"
+                parameter="direction"
+                clr-enum-type="Facebook.Shimmer.ShimmerShape" />
+    </mapping>
+    <mapping jni-class="com/facebook/shimmer/Shimmer$ColorHighlightBuilder" >
+        <method jni-name="setBaseColor"
+                parameter="color"
+                clr-enum-type="Android.Graphics.Color" />
+    </mapping>
+    <mapping jni-class="com/facebook/shimmer/Shimmer$ColorHighlightBuilder" >
+        <method jni-name="setHighlightColor"
+                parameter="color"
+                clr-enum-type="Android.Graphics.Color" />
+    </mapping>
+</enum-method-mappings>

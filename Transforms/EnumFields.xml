@@ -1,7 +1,6 @@
 ﻿<enum-field-mappings>
-    <!--
-    <mapping clr-enum-type="Com.Facebook.Shimmer.Shimmer.Direction"
-             jni-class="com/facebook/shimmer/Shimmer$Direction" >
+    <mapping clr-enum-type="Facebook.Shimmer.ShimmerDirection"
+             jni-interface="com/facebook/shimmer/Shimmer$Direction" >
         <field clr-name="LeftToRight"
                jni-name="LEFT_TO_RIGHT"
                value="0" />
@@ -15,10 +14,8 @@
                jni-name="BOTTOM_TO_TOP"
                value="3" />
     </mapping>
-    -->
-    <!--
-    <mapping clr-enum-type="Com.Facebook.Shimmer.Shimmer.Shape"
-             jni-class="com/facebook/shimmer/Shimmer$Shape" >
+    <mapping clr-enum-type="Facebook.Shimmer.ShimmerShape"
+             jni-interface="com/facebook/shimmer/Shimmer$Shape" >
         <field clr-name="Linear"
                jni-name="LINEAR"
                value="0" />
@@ -26,5 +23,4 @@
                jni-name="RADIAL"
                value="1" />
     </mapping>
-    -->
 </enum-field-mappings>
