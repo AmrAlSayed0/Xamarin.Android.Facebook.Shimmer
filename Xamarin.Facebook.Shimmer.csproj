@@ -13,6 +13,7 @@
         <Deterministic>true</Deterministic>
         <LangVersion>9.0</LangVersion>
         <Nullable>enable</Nullable>
+        <_EnableInterfaceMembers>true</_EnableInterfaceMembers>
         <ErrorReport>prompt</ErrorReport>
         <WarningLevel>4</WarningLevel>
         <TargetFrameworks>monoandroid9.0;monoandroid10.0;monoandroid11.0</TargetFrameworks>
