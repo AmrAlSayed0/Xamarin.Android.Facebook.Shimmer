@@ -6,12 +6,7 @@
     </mapping>
     <mapping jni-class="com/facebook/shimmer/Shimmer$Builder" >
         <method jni-name="setShape"
-                parameter="direction"
-                clr-enum-type="Facebook.Shimmer.ShimmerShape" />
-    </mapping>
-    <mapping jni-class="com/facebook/shimmer/Shimmer$Builder" >
-        <method jni-name="setShape"
-                parameter="direction"
+                parameter="shape"
                 clr-enum-type="Facebook.Shimmer.ShimmerShape" />
     </mapping>
     <mapping jni-class="com/facebook/shimmer/Shimmer$ColorHighlightBuilder" >
