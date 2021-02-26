@@ -44,7 +44,7 @@
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         <PackageProjectUrl>https://github.com/AmrAlSayed0/Xamarin.Android.Facebook.Shimmer</PackageProjectUrl>
         <RepositoryUrl>https://github.com/AmrAlSayed0/Xamarin.Android.Facebook.Shimmer</RepositoryUrl>
-        <PackageVersion>0.5.0.1</PackageVersion>
+        <PackageVersion>0.5.0.2</PackageVersion>
         <RepositoryType>git</RepositoryType>
         <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
     </PropertyGroup>
