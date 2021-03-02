@@ -96,7 +96,7 @@
     </ItemGroup>
     <ItemGroup>
         <!--
-        <None Include=".Jars\shimmer\proguard.txt"
+        <None Include="Jars\shimmer\proguard.txt"
               Pack="True"
               PackagePath="proguard\" />
         -->
