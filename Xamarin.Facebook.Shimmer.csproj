@@ -33,9 +33,13 @@
         <DebugType>portable</DebugType>
         <DefineConstants>$(DefineConstants);TRACE;_BINDING_;</DefineConstants>
         <EnableDefaultItems>false</EnableDefaultItems>
+        <MavenGroupId>com.facebook.shimmer</MavenGroupId>
+        <MavenArtifactId>shimmer</MavenArtifactId>
+        <MavenArtifactVersion>0.5.0</MavenArtifactVersion>
+        <NugetPackageId>Xamarin.Android.Facebook.Shimmer</NugetPackageId>
     </PropertyGroup>
     <PropertyGroup>
-        <PackageId>Xamarin.Android.Facebook.Shimmer</PackageId>
+        <PackageId>$(NugetPackageId)</PackageId>
         <Title>A Xamarin binding for Facebook's Android library "Shimmer"</Title>
         <Summary>A Xamarin binding for Facebook's Android library "Shimmer"</Summary>
         <Description>A Xamarin binding for Facebook's Android library "Shimmer"</Description>
@@ -47,7 +51,7 @@
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         <PackageProjectUrl>https://github.com/AmrAlSayed0/Xamarin.Android.Facebook.Shimmer</PackageProjectUrl>
         <RepositoryUrl>https://github.com/AmrAlSayed0/Xamarin.Android.Facebook.Shimmer</RepositoryUrl>
-        <PackageVersion>0.5.0.3</PackageVersion>
+        <PackageVersion>$(MavenArtifactVersion).4</PackageVersion>
         <RepositoryType>git</RepositoryType>
         <!-- Include symbol files (*.pdb) in the built .nupkg -->
         <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
@@ -74,32 +78,46 @@
         <Compile Include="Additions\**\*.cs" />
     </ItemGroup>
     <ItemGroup>
+        <!-- Includes the -javadoc jar to generate documentation. This property is now deprecated. -->
         <!--
-        <JavaDocJar Include="Jars\JavaDocJars\com.facebook.shimmer.shimmer-0.5.0-javadoc.jar" />
+        <JavaDocJar Include="Jars\JavaDocJars\$(MavenGroupId).$(MavenArtifactId)-$(MavenArtifactVersion)-javadoc.jar"
+                    Condition="Exists('Jars\JavaDocJars\$(MavenGroupId).$(MavenArtifactId)-$(MavenArtifactVersion)-javadoc.jar')" />
         -->
-        <JavaSourceJar Include="Jars\JavaSourcesJars\com.facebook.shimmer.shimmer-0.5.0-sources.jar" />
-        <InputJar Include="Jars\shimmer\classes.jar" />
-        <!-- For those artifacts with lib/ folder -->
-        <InputJar Include="Jars\shimmer\libs\*.jar"
-                  Condition="Exists('Jars\shimmer\libs\')" />
-        <None Include="Jars\com.facebook.shimmer.shimmer-0.5.0.aar"
+        <!-- Includes the -sources jar to generate documentation. -->
+        <JavaSourceJar Include="Jars\JavaSourcesJars\$(MavenGroupId).$(MavenArtifactId)-$(MavenArtifactVersion)-sources.jar"
+                       Condition="Exists('Jars\JavaSourcesJars\$(MavenGroupId).$(MavenArtifactId)-$(MavenArtifactVersion)-sources.jar')" />
+        <!-- Add the jar as the main source of binding, if it exists. This is mainly for libraries distributed as jar files -->
+        <InputJar Include="Jars\$(MavenGroupId).$(MavenArtifactId)-$(MavenArtifactVersion).jar"
+                  Condition="Exists('Jars\$(MavenGroupId).$(MavenArtifactId)-$(MavenArtifactVersion).jar')" />
+        <!-- Add the extracted jars as the main source of binding, if it exists. This is mainly for libraries distributed as aar files -->
+        <!-- The aar files needs to be extracted to a folder named the same name as the maven artifact ID. -->
+        <InputJar Include="Jars\$(MavenArtifactId)\classes.jar"
+                  Condition="Exists('Jars\$(MavenArtifactId)\classes.jar')" />
+        <InputJar Include="Jars\$(MavenArtifactId)\libs\*.jar"
+                  Condition="Exists('Jars\$(MavenArtifactId)\libs\')" />
+        <!-- Packs the jar or aar file into the nuget package. -->
+        <None Include="Jars\$(MavenGroupId).$(MavenArtifactId)-$(MavenArtifactVersion).jar"
+              Condition="Exists('Jars\$(MavenGroupId).$(MavenArtifactId)-$(MavenArtifactVersion).jar')"
               Pack="True"
-              PackagePath="aar\com.facebook.shimmer.shimmer.aar" />
+              PackagePath="jar\$(MavenGroupId).$(MavenArtifactId).jar" />
+        <None Include="Jars\$(MavenGroupId).$(MavenArtifactId)-$(MavenArtifactVersion).aar"
+              Condition="Exists('Jars\$(MavenGroupId).$(MavenArtifactId)-$(MavenArtifactVersion).aar')"
+              Pack="True"
+              PackagePath="aar\$(MavenGroupId).$(MavenArtifactId).aar" />
     </ItemGroup>
     <ItemGroup>
-        <None Include="Xamarin.Android.Facebook.Shimmer.targets"
+        <None Include="$(NugetPackageId).targets"
               Pack="True"
-              PackagePath="build\$(TargetFramework)" />
-        <None Include="Xamarin.Android.Facebook.Shimmer.targets"
+              PackagePath="build" />
+        <None Include="$(NugetPackageId).targets"
               Pack="True"
-              PackagePath="buildTransitive\$(TargetFramework)" />
+              PackagePath="buildTransitive" />
     </ItemGroup>
     <ItemGroup>
-        <!--
-        <None Include="Jars\shimmer\proguard.txt"
+        <None Include="Jars\$(MavenArtifactId)\proguard.txt"
+              Condition="Exists('Jars\$(MavenArtifactId)\proguard.txt')"
               Pack="True"
               PackagePath="proguard\" />
-        -->
     </ItemGroup>
     <ItemGroup>
         <TransformFile Include="Transforms\*.xml" />
